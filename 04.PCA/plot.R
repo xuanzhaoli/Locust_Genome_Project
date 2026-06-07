@@ -1,0 +1,1 @@
+ggplot(pca, aes(x=PC1, y=PC2))+geom_point(mapping = aes(x = PC1, y = PC2, color= population),size=5)+scale_color_manual("population",values = mycolors)+theme_bw()+theme(legend.position = "none")+stat_ellipse(aes(fill=pop),type="norm",geom="polygon",alpha=0.2,color=NA,level = 0.99)
