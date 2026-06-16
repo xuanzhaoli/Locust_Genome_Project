@@ -1,0 +1,18 @@
+#BSUB -J BUSCO_genome_20220918
+#BSUB -n 12
+#BSUB -e BUSCO_genome_20220918.err
+#BSUB -o BUSCO_genome_20220918.out
+#BSUB -q big
+
+
+
+
+###BUSCO
+export PYTHONPATH=/share/home/software/software/python3/lib/python3.9/site-packages:/share/home/software/software/miniconda3/lib/python3.9/site-packages:$PYTHONPATH
+export PATH=/share/home/software/software/python3/bin:$PATH
+export BUSCO_CONFIG_FILE=/share/home/software/software/busco-5.2.2/config/config.ini
+export AUGUSTUS_CONFIG_PATH=/share/home/software/software/Augustus-3.4.0/config/
+
+
+
+busco -i /share/home/public-data/locust/locust_genome.chr.final.fasta -c 8 -l /share/home/software/database/BUSCO/insecta_odb10 -o output_genome -m geno --offline

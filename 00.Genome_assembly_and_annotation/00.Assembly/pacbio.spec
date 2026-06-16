@@ -1,0 +1,4 @@
+useGrid =
+minThreads =
+minOverlapLength =
+minReadLength  =
